@@ -3,6 +3,10 @@ import React, { Component } from "react";
 class Forms extends Component {
   //refs
   nameStudent = React.createRef();
+  phoneStudent = React.createRef();
+  mailStudent = React.createRef();
+  idStudent = React.createRef();
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,7 +15,12 @@ class Forms extends Component {
   sendForm = e => {
     e.preventDefault();
     this.props.createNewRegister();
-    console.log(this.nameStudent.current.value);
+    console.log(
+      this.nameStudent.current.value,
+      this.phoneStudent.current.value,
+      this.mailStudent.current.value,
+      this.idStudent.current.value
+    );
   };
   render() {
     return (
@@ -29,6 +38,7 @@ class Forms extends Component {
           <label className="col-sm-4 col-lg-2 col-form-label">Teléfono:</label>
           <div className="col-sm-4 col-lg-10">
             <input
+              ref={this.phoneStudent}
               type="text"
               className="form-control"
               placeholder="Ej. +569 3772 9376"
@@ -37,6 +47,7 @@ class Forms extends Component {
           <label className="col-sm-4 col-lg-2 col-form-label">Correo:</label>
           <div className="col-sm-4 col-lg-10">
             <input
+              ref={this.mailStudent}
               type="text"
               className="form-control"
               placeholder="Ej. correo@gmail.com"
@@ -45,6 +56,7 @@ class Forms extends Component {
           <label className="col-sm-4 col-lg-2 col-form-label">Rut:</label>
           <div className="col-sm-4 col-lg-10">
             <input
+              ref={this.idStudent}
               type="text"
               className="form-control"
               placeholder="Ej. 26.492.283-1"
