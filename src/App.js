@@ -11,9 +11,13 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <h1>Cursos de Verano +NEM</h1>
-        <h4>No dejes pasar esta increíble oportunidad acá</h4>
-        <br />
+        <div className="row">
+          <div className="col-3">
+            <h1>Cursos de Verano +NEM</h1>
+            <h4>No dejes pasar esta increíble oportunidad acá</h4>
+          </div>
+        </div>
+
         <Forms createNewRegister={this.createNewRegister} />
       </div>
     );
