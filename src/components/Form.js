@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 
 class Forms extends Component {
+  //refs
+  nameStudent = React.createRef();
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  sendForm = e => {
+    e.preventDefault();
+    this.props.createNewRegister();
+    console.log(this.nameStudent.current.value);
+  };
   render() {
     return (
-      <form>
+      <form onSubmit={this.sendForm}>
         <div className="form-group row">
           <label className="col-sm-4 col-lg-2 col-form-label">Nombre:</label>
           <div className="col-sm-4 col-lg-10">
             <input
+              ref={this.nameStudent}
               type="text"
               className="form-control"
               placeholder="Ej. José Canseco"
@@ -42,8 +51,8 @@ class Forms extends Component {
             />
           </div>
           <div className="col-sm-4 col-lg-10">
-            <button type="button" class="btn btn-primary btn-lg btn-block">
-              Block level button
+            <button type="submit" className="btn btn-primary btn-lg btn-block">
+              Inscribirse
             </button>
           </div>
         </div>

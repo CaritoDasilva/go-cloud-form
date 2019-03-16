@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import Header from "./components/header";
-import Forms from "./components/form";
+import Header from "./components/Header";
+import Forms from "./components/Form";
+import "./App.css";
 
 class App extends Component {
+  createNewRegister = () => {
+    console.log("Se envía desde Forms");
+  };
   render() {
     return (
       <div>
@@ -10,7 +14,7 @@ class App extends Component {
         <h1>Cursos de Verano +NEM</h1>
         <h4>No dejes pasar esta increíble oportunidad acá</h4>
         <br />
-        <Forms />
+        <Forms createNewRegister={this.createNewRegister} />
       </div>
     );
   }
