@@ -13,13 +13,13 @@ class App extends Component {
       <div>
         <Header />
         <div className="screen">
-          <div className="row">
-            <div className="col-4 text-center">
+          <div className="row title1">
+            <div className="col-5 text-center">
               <h1>Cursos de Verano +NEM</h1>
             </div>
           </div>
-          <div className="row">
-            <div className="col-8 text-center">
+          <div className="row title2">
+            <div className="col-8">
               <h4>No dejes pasar esta increíble oportunidad acá</h4>
             </div>
           </div>

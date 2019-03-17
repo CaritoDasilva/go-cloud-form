@@ -65,7 +65,7 @@ class Forms extends Component {
       >
         <div className="form-group">
           <div className="row">
-            <div className="col-4">
+            <div className="col-5">
               <label className="col-2 col-form-label">Nombre:</label>
               <input
                 type="text"
@@ -79,7 +79,7 @@ class Forms extends Component {
               />
             </div>
 
-            <div className="col-4">
+            <div className="col-5">
               <label className="col-sm-4 col-lg-2 col-form-label">
                 Teléfono:
               </label>
@@ -97,7 +97,7 @@ class Forms extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-4">
+            <div className="col-5">
               <label className="col-sm-4 col-lg-2 col-form-label">
                 Correo:
               </label>
@@ -111,7 +111,7 @@ class Forms extends Component {
                 value={this.state.email}
               />
             </div>
-            <div className="col-4">
+            <div className="col-5">
               <label className="col-sm-4 col-lg-2 col-form-label">Rut:</label>
               <input
                 type="text"
@@ -127,11 +127,8 @@ class Forms extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-8">
-              <button
-                type="submit"
-                className="btn btn-primary btn-lg btn-block"
-              >
+            <div className="col-10">
+              <button type="submit" className="btn btn-lg btn-block text-white">
                 Inscribirse
               </button>
             </div>
