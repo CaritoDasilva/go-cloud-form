@@ -12,8 +12,11 @@
   background-color: white;
 }
 
-button {
+.submitbtn {
   margin-top: 5%;
+}
+
+button {
   background-color: #2BC894 !important;
 }
 

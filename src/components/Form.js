@@ -127,7 +127,7 @@ class Forms extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-sm-8 col-lg-10">
+            <div className="col-sm-8 col-lg-10 submitbtn">
               <button type="submit" className="btn btn-lg btn-block text-white">
                 Inscribirse
               </button>
