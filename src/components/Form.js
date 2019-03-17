@@ -6,19 +6,14 @@ import firestore from "../../src/firestoreService/firestore";
 import firebase from "firebase";
 
 class Forms extends Component {
-  //refs
-  nameStudent = React.createRef();
-  phoneStudent = React.createRef();
-  mailStudent = React.createRef();
-  idStudent = React.createRef();
-
-  constructor(props) {
-    super(props);
+  constructor(props, ...args) {
+    super(props, ...args);
     this.state = {
       fullname: "",
       phone: "",
       email: "",
-      id: ""
+      id: "",
+      error: false
     };
   }
 
@@ -28,13 +23,8 @@ class Forms extends Component {
     });
   };
 
-  addRegister = e => {
-    e.preventDefault();
-    this.props.createNewRegister();
+  addRegister() {
     const db = firebase.firestore();
-    db.settings({
-      timestampsInSnapshots: true
-    });
     const userRef = db.collection("students").add({
       fullname: this.state.fullname,
       phone: this.state.phone,
@@ -47,22 +37,33 @@ class Forms extends Component {
       email: "",
       id: ""
     });
-    console.log(
-      this.nameStudent.current.value,
-      this.phoneStudent.current.value,
-      this.mailStudent.current.value,
-      this.idStudent.current.value
-    );
+  }
+
+  validatorsForm = e => {
+    e.preventDefault();
+    if (
+      this.state.fullname === "" ||
+      this.state.email === "" ||
+      this.state.phone === "" ||
+      this.state.id === ""
+    ) {
+      this.setState({ error: true });
+      console.log("faltan campos por validar");
+    } else {
+      this.setState({ error: false });
+      this.addRegister();
+      this.props.createNewRegister([this.state]);
+    }
   };
   render() {
+    const activatedError = this.state.error;
     return (
-      <form onSubmit={this.addRegister}>
+      <form onSubmit={this.validatorsForm}>
         <div className="form-group">
           <div className="row">
-            <div className="col-6">
+            <div className="col-4">
               <label className="col-2 col-form-label">Nombre:</label>
               <input
-                ref={this.nameStudent}
                 type="text"
                 name="fullname"
                 className="form-control"
@@ -72,12 +73,11 @@ class Forms extends Component {
               />
             </div>
 
-            <div className="col-6">
+            <div className="col-4">
               <label className="col-sm-4 col-lg-2 col-form-label">
                 Teléfono:
               </label>
               <input
-                ref={this.phoneStudent}
                 type="text"
                 name="phone"
                 className="form-control"
@@ -88,12 +88,11 @@ class Forms extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-4">
               <label className="col-sm-4 col-lg-2 col-form-label">
                 Correo:
               </label>
               <input
-                ref={this.mailStudent}
                 type="email"
                 name="email"
                 className="form-control"
@@ -102,10 +101,9 @@ class Forms extends Component {
                 value={this.state.email}
               />
             </div>
-            <div className="col-6">
+            <div className="col-4">
               <label className="col-sm-4 col-lg-2 col-form-label">Rut:</label>
               <input
-                ref={this.idStudent}
                 type="text"
                 name="id"
                 className="form-control"
@@ -116,7 +114,7 @@ class Forms extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-12">
+            <div className="col-8">
               <button
                 type="submit"
                 className="btn btn-primary btn-lg btn-block"
@@ -126,6 +124,13 @@ class Forms extends Component {
             </div>
           </div>
         </div>
+        {activatedError ? (
+          <div className="col-8 alert alert-danger text-center">
+            Todos los campos son obligatorios
+          </div>
+        ) : (
+          ""
+        )}
       </form>
     );
   }
