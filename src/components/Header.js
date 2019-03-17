@@ -3,7 +3,7 @@ import logo from "../imgs/logo.png";
 
 const Header = props => {
   return (
-    <div>
+    <div className="header">
       <div className="card-body">
         <img className="logoPicture" src={logo} alt="application logo" />
       </div>

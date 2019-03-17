@@ -14,13 +14,13 @@ class App extends Component {
         <Header />
         <div className="container-fluid screen">
           <div className="row title1">
-            <div className="col-sm-4 col-lg-5 text-center">
+            <div className="col-sm-4 col-lg-6 text-center">
               <h1 className="title1">Cursos de Verano +NEM</h1>
             </div>
           </div>
           <div className="row title2">
-            <div className="col-sm-12 col-lg-8 text-center">
-              <h4>No dejes pasar esta increíble oportunidad acá</h4>
+            <div className="col-sm-12 col-lg-10 text-center">
+              <h4>No dejes pasar esta increíble oportunidad. Inscríbete acá</h4>
             </div>
           </div>
 
