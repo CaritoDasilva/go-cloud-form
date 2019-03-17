@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 /*global firebase*/
 // eslint-disable-next-line no-unused-vars
-import firestore from "../../src/firestoreService/firestore";
+import firestore from "../firestoreService/Firestore";
 import firebase from "firebase";
 
 class Forms extends Component {
@@ -58,7 +58,11 @@ class Forms extends Component {
   render() {
     const activatedError = this.state.error;
     return (
-      <form onSubmit={this.validatorsForm}>
+      <form
+        className="needs-validation"
+        novalidate
+        onSubmit={this.validatorsForm}
+      >
         <div className="form-group">
           <div className="row">
             <div className="col-4">
@@ -68,6 +72,8 @@ class Forms extends Component {
                 name="fullname"
                 className="form-control"
                 placeholder="Ej. José Canseco"
+                required
+                minLength="3"
                 onChange={this.updateInput}
                 value={this.state.fullname}
               />
@@ -82,6 +88,9 @@ class Forms extends Component {
                 name="phone"
                 className="form-control"
                 placeholder="Ej. +569 3772 9376"
+                required
+                minLength="10"
+                title="Debe ser un Teléfono válido"
                 onChange={this.updateInput}
                 value={this.state.phone}
               />
@@ -97,6 +106,7 @@ class Forms extends Component {
                 name="email"
                 className="form-control"
                 placeholder="Ej. correo@gmail.com"
+                required
                 onChange={this.updateInput}
                 value={this.state.email}
               />
@@ -108,6 +118,9 @@ class Forms extends Component {
                 name="id"
                 className="form-control"
                 placeholder="Ej. 26.492.283-1"
+                required
+                pattern="\d{3,8}-[\d|kK]{1}"
+                title="Debe ser un Rut válido"
                 onChange={this.updateInput}
                 value={this.state.id}
               />
