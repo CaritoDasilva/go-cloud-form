@@ -8,3 +8,14 @@ body, html {
   height: 100%;
   overflow: hidden;
 }
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  body, html {
+    overflow: visible;
+  }
+}

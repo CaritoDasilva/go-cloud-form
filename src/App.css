@@ -50,7 +50,10 @@ form {
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
 
 @media (min-width: 481px) and (max-width: 767px) {
   .screen {
