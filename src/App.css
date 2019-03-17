@@ -5,12 +5,11 @@
 
 .screen {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background-image: url(./imgs/background-desktop.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: white;
-  overflow: hidden;
 }
 
 button {
@@ -28,4 +27,39 @@ form {
 
 .title1 {
   margin-left: 40%;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .screen {
+    width: 100%;
+    background-image: url(./imgs/background-phone.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  form {
+    margin-left: 0%;
+  }
+  .title2 {
+    margin-left: 0%;
+  }
+  .title1 {
+    margin-left: 0%;
+    font-size: 3rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .screen {
+    width: 100%;
+    background-image: url(./imgs/background-phone.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  form {
+    margin-left: 0%;
+  }
 }
