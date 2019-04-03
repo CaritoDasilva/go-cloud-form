@@ -84,12 +84,12 @@ class Forms extends Component {
                 Teléfono:
               </label>
               <input
-                type="text"
+                type="tel"
                 name="phone"
                 className="form-control"
                 placeholder="Ej. +569 3772 9376"
                 required
-                minLength="10"
+                pattern="^\+569[0-9]{8}$"
                 title="Debe ser un Teléfono válido"
                 onChange={this.updateInput}
                 value={this.state.phone}

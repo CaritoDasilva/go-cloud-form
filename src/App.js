@@ -24,7 +24,7 @@ class App extends Component {
             </div>
           </div>
 
-          <Forms createNewRegister={this.createNewRegister} />
+          <Forms />
         </div>
       </div>
     );
