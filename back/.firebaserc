@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "go-cloud-challenge",
+    "go-cloud-challenge-be": "go-cloud-challenge-be"
+  }
+}
